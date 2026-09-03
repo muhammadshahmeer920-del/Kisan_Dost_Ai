@@ -9,3 +9,4 @@ requests
 weasyprint
 gTTS
 python-dotenv
+python-multipart
