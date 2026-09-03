@@ -2,7 +2,10 @@ import os
 import io
 import json
 import base64
+from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, File, HTTPException
+
+load_dotenv()
 from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from google import genai
@@ -25,7 +28,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-GEMINI_API_KEY = "YOUR_NEW_GEMINI_API_KEY"
+# Load Gemini API key from environment; create a .env file in this folder to set GEMINI_API_KEY.
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 
 def generate_vet_data(disease_name: str, confidence: float):

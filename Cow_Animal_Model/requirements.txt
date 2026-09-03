@@ -8,3 +8,4 @@ streamlit
 requests
 weasyprint
 gTTS
+python-dotenv
