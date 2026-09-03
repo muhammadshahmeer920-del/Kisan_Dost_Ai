@@ -16,3 +16,9 @@ server.cjs.map
 # Flutter / Dart
 .dart_tool/
 android/app/build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
