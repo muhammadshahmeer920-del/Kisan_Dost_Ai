@@ -1,0 +1,97 @@
+name: kisan_dost_ai
+description: "Kisan Dost AI — Smart Livestock & Farm Management Platform (Flutter)"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  provider: ^6.1.2
+
+  # Networking
+  dio: ^5.7.0
+  http: ^1.2.2
+  socket_io_client: ^3.0.2
+  jwt_decoder: ^2.0.1
+  connectivity_plus: ^6.1.0
+
+  # Persistence (replaces localStorage)
+  shared_preferences: ^2.3.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Firebase
+  firebase_core: ^3.6.0
+  firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  google_sign_in: ^6.2.1
+
+  # UI / UX
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+  flutter_animate: ^4.5.0
+
+  # Media / camera / audio
+  image_picker: ^1.1.2
+  camera: ^0.11.0+2
+  video_player: ^2.9.1
+  just_audio: ^0.9.41
+  flutter_tts: ^4.0.2
+  speech_to_text: ^7.0.0
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^6.0.2
+
+  # Maps / location
+  google_maps_flutter: ^2.9.0
+  geolocator: ^13.0.1
+
+  # Charts
+  fl_chart: ^0.69.0
+
+  # PDF / print
+  pdf: ^3.11.1
+  printing: ^5.13.4
+  path_provider: ^2.1.4
+  share_plus: ^10.1.0
+  url_launcher: ^6.3.1
+
+  # Utils
+  intl: ^0.20.2
+  uuid: ^4.5.1
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  equatable: ^2.0.5
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+  fonts:
+    - family: NotoNastaliqUrdu
+      fonts:
+        - asset: assets/fonts/NotoNastaliqUrdu-Regular.ttf
+        - asset: assets/fonts/NotoNastaliqUrdu-Bold.ttf
+          weight: 700

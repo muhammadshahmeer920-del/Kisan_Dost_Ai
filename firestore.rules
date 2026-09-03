@@ -1,0 +1,122 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        getUserData().role == 'admin' || 
+        getUserData().role == 'super_admin' ||
+        request.auth.token.role == 'admin' ||
+        request.auth.token.role == 'super_admin' ||
+        request.auth.token.admin == true
+      );
+    }
+
+    function isSuperAdmin() {
+      return isAuthenticated() && (
+        getUserData().role == 'super_admin' ||
+        request.auth.token.role == 'super_admin'
+      );
+    }
+
+    // User Profiles
+    match /users/{userId} {
+      allow read: if true;
+      allow create, update: if isAuthenticated();
+      allow delete: if isSuperAdmin() || isAdmin();
+    }
+
+    // Livestock Management
+    match /animals/{animalId} {
+      allow read: if true; // Publicly readable for Mandi and customer discovery
+      allow write: if isAuthenticated(); // Allowed for authenticated farm administration
+    }
+
+    // Pure Dairy Products Storefront
+    match /dairyProducts/{productId} {
+      allow read: if true; // Public storefront catalog
+      allow write: if isAuthenticated(); // Farm admin price/stock manager
+    }
+
+    // Farm Expenses Cashbook
+    match /expenses/{expenseId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // Appointments & Vet Bookings
+    match /appointments/{appointmentId} {
+      allow read, write: if isAuthenticated();
+    }
+
+    // Admin Users & RBAC Directory
+    match /adminUsers/{adminUserId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isAdmin();
+      allow delete: if isSuperAdmin();
+    }
+
+    // Applications & Subsidies
+    match /applications/{applicationId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    // Complaints & Grievances
+    match /complaints/{complaintId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated(); // Complaint submission requires authentication
+      allow update, delete: if isAdmin();
+    }
+
+    // Surveillance & Outbreak Reports
+    match /systemReports/{reportId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Broadcast Notifications
+    match /notifications/{notificationId} {
+      allow read: if true; // Broadcasted alerts readable by recipients
+      allow write: if isAdmin();
+    }
+
+    // Support Inquiries & Messages
+    match /messages/{messageId} {
+      allow read, create, update: if isAuthenticated(); // Authenticated customer support messages only
+      allow delete: if isAdmin();
+    }
+
+    // AI Diagnostics & Telemetry
+    match /aiActivity/{activityId} {
+      allow read: if isAdmin();
+      allow write: if isAuthenticated(); // Authenticated telemetry logger
+    }
+
+    // Immutable Admin Audit Logs
+    match /adminAuditLogs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isAuthenticated();
+      allow update, delete: if false; // Immutable audit log requirement
+    }
+
+    // System Settings & Engine Config
+    match /adminSettings/{settingId} {
+      allow read: if true;
+      allow write: if isSuperAdmin() || isAdmin();
+    }
+  }
+}

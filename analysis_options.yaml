@@ -1,0 +1,19 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    prefer_const_constructors: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+    avoid_print: false
+    use_super_parameters: true
+    prefer_relative_imports: true
+    unnecessary_this: false
+    constant_identifier_names: false
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore
