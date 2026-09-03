@@ -1,0 +1,22 @@
+
+> react-example@0.0.0 dev
+> tsx server.ts
+
+◇ injected env (2) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+◇ injected env (0) from .env.local // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+Kisan Dost AI server running on http://localhost:3000
+[Gemini Init] GEMINI_API_KEY loaded ✓ (AQ.Ab8...) | model cascade: gemini-2.5-flash → gemini-2.0-flash → gemini-1.5-flash | timeout: 15000ms
+[Gemini Error Details]: [HybridRouter] Gemini request timed out after 15000ms
+[Gemini Network Latency] Exceeded timeout, falling back to Ollama
+[HybridRouter] ⚠️  Gemini failed ([HybridRouter] Gemini request timed out after 15000ms). Switching to Ollama fallback...
+[HybridRouter] Routing to Ollama (llama3)...
+[HybridRouter] ❌ Both Gemini and Ollama failed: [HybridRouter] Ollama request timed out after 25000ms
+AI Assistant Error: Error: Hybrid AI Router: All engines unavailable. Gemini timed out or offline, Ollama unreachable. Please check your connection or ensure Ollama is running.
+    at generateWithHybridFallback (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:273:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:538:9)
+    at async <anonymous> (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:710:41)
+[2m10:55:26 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mpackage.json[22m
+[2m10:55:48 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mpackage.json[22m
+[2m10:56:10 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mserver.ts[22m

@@ -1,0 +1,60 @@
+
+> react-example@0.0.0 predev
+> npx kill-port 3000 24678 5000 --silent 2>nul || true
+
+Process on port 24678 killed
+Process on port 3000 killed
+Process on port 5000 killed
+
+> react-example@0.0.0 dev
+> tsx server.ts
+
+◇ injected env (2) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+◇ injected env (0) from .env.local // tip: ◈ secrets for agents [www.dotenvx.com]
+
+🌿 Kisan Dost AI server running on http://localhost:3000
+[Gemini Init] GEMINI_API_KEY loaded ✓ (AQ.Ab8...) | model cascade: gemini-3.6-flash → gemini-2.5-flash | timeout: 10000ms
+[Gemini Error Details]: [HybridRouter] Gemini request timed out after 10000ms
+[Gemini Network Latency] Exceeded timeout, falling back to Ollama
+[HybridRouter] ⚠️  Gemini failed ([HybridRouter] Gemini request timed out after 10000ms). Switching to Ollama fallback...
+[HybridRouter] Routing to Ollama (llama3) at http://127.0.0.1:11434/api/generate...
+[HybridRouter] ❌ Both Gemini and Ollama failed: [HybridRouter] Ollama request timed out after 5000ms
+AI Assistant Error: Error: Hybrid AI Router: All engines unavailable. Gemini timed out or offline, Ollama unreachable. Please check your connection or ensure Ollama is running.
+    at generateWithHybridFallback (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:278:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async <anonymous> (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:715:41)
+[HybridRouter] ✅ Gemini Online — responded successfully.
+[Gemini Error Details]: [HybridRouter] Gemini request timed out after 10000ms
+[Gemini Network Latency] Exceeded timeout, falling back to Ollama
+[HybridRouter] ⚠️  Gemini failed ([HybridRouter] Gemini request timed out after 10000ms). Switching to Ollama fallback...
+[HybridRouter] Routing to Ollama (llama3) at http://127.0.0.1:11434/api/generate...
+[HybridRouter] ❌ Both Gemini and Ollama failed: [HybridRouter] Ollama request timed out after 5000ms
+AI Scan Error: Error: Hybrid AI Router: All engines unavailable. Gemini timed out or offline, Ollama unreachable. Please check your connection or ensure Ollama is running.
+    at generateWithHybridFallback (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:278:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async handleAiScan (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:420:47)
+[HybridRouter] ✅ Gemini Online — responded successfully.
+[2m1:36:48 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/components/AiDiagnosisReport.tsx[22m
+[2m1:36:57 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/components/AiDiagnosisReport.tsx[22m
+[2m1:37:05 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/components/AiDiagnosisReport.tsx[22m
+[Gemini API] Model 'gemini-3.6-flash' hit 504 DEADLINE_EXCEEDED. Skipping retries for this model.
+[Gemini Error Details]: [HybridRouter] Gemini request timed out after 10000ms
+[Gemini Network Latency] Exceeded timeout, falling back to Ollama
+[HybridRouter] ⚠️  Gemini failed ([HybridRouter] Gemini request timed out after 10000ms). Switching to Ollama fallback...
+[HybridRouter] Routing to Ollama (llama3) at http://127.0.0.1:11434/api/generate...
+[HybridRouter] ❌ Both Gemini and Ollama failed: [HybridRouter] Ollama request timed out after 5000ms
+AI Scan Error: Error: Hybrid AI Router: All engines unavailable. Gemini timed out or offline, Ollama unreachable. Please check your connection or ensure Ollama is running.
+    at generateWithHybridFallback (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:278:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async handleAiScan (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:420:47)
+[2m1:42:35 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/components/AiDiagnosisReport.tsx[22m
+[Gemini API] Model 'gemini-3.6-flash' hit 504 DEADLINE_EXCEEDED. Skipping retries for this model.
+[Gemini Error Details]: [HybridRouter] Gemini request timed out after 10000ms
+[Gemini Network Latency] Exceeded timeout, falling back to Ollama
+[HybridRouter] ⚠️  Gemini failed ([HybridRouter] Gemini request timed out after 10000ms). Switching to Ollama fallback...
+[HybridRouter] Routing to Ollama (llama3) at http://127.0.0.1:11434/api/generate...
+[HybridRouter] ❌ Both Gemini and Ollama failed: [HybridRouter] Ollama request timed out after 5000ms
+AI Scan Error: Error: Hybrid AI Router: All engines unavailable. Gemini timed out or offline, Ollama unreachable. Please check your connection or ensure Ollama is running.
+    at generateWithHybridFallback (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:278:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async handleAiScan (C:\Users\Admin\Desktop\kisan-dost-ai (2)\server.ts:420:47)

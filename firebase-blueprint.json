@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "Farmer account details",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "farmName": { "type": "string" },
+        "location": { "type": "string" },
+        "district": { "type": "string" },
+        "language": { "type": "string" },
+        "isPremium": { "type": "boolean" },
+        "hasCompletedOnboarding": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email"]
+    },
+    "animals": {
+      "title": "Livestock Animals",
+      "description": "Livestock profiles with medical history and tag ID",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "tagId": { "type": "string" },
+        "name": { "type": "string" },
+        "species": { "type": "string" },
+        "breed": { "type": "string" },
+        "gender": { "type": "string" },
+        "ageMonths": { "type": "number" },
+        "weightKg": { "type": "number" },
+        "dob": { "type": "string" },
+        "purchasePrice": { "type": "number" },
+        "currentMarketValue": { "type": "number" },
+        "pregnancyStatus": { "type": "string" },
+        "milkYieldLitersPerDay": { "type": "number" },
+        "healthScore": { "type": "number" },
+        "healthStatus": { "type": "string" },
+        "photos": { "type": "array" },
+        "vaccinationHistory": { "type": "array" },
+        "medicalHistory": { "type": "array" },
+        "scanJournal": { "type": "array" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["tagId", "name", "species"]
+    },
+    "expenses": {
+      "title": "Farm Expenses",
+      "description": "Financial expenses log for feed, medicine, vet fees",
+      "type": "object",
+      "properties": {
+        "farmerId": { "type": "string" },
+        "date": { "type": "string" },
+        "category": { "type": "string" },
+        "amountPKR": { "type": "number" },
+        "description": { "type": "string" },
+        "animalName": { "type": "string" }
+      },
+      "required": ["amountPKR", "category"]
+    },
+    "appointments": {
+      "title": "Vet Appointments",
+      "description": "Vet booking appointments",
+      "type": "object",
+      "properties": {
+        "farmerId": { "type": "string" },
+        "vetId": { "type": "string" },
+        "vetName": { "type": "string" },
+        "animalName": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "type": { "type": "string" },
+        "status": { "type": "string" },
+        "reason": { "type": "string" }
+      },
+      "required": ["vetName", "date", "status"]
+    },
+    "dairyProducts": {
+      "title": "Dairy Products",
+      "description": "Direct farmer dairy store listings",
+      "type": "object",
+      "properties": {
+        "farmName": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "sellerPhone": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "pricePKR": { "type": "number" },
+        "unit": { "type": "string" },
+        "inStock": { "type": "boolean" }
+      },
+      "required": ["name", "pricePKR"]
+    }
+  }
+}

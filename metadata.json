@@ -1,0 +1,12 @@
+{
+  "name": "Kisan Dost AI",
+    "description": "Enterprise Livestock & Dairy Platform with two completely separate interfaces: a Farmer User Portal (livestock management, AI vision scanner, requests, records, support) and an Enterprise Admin Control Center (user RBAC, unified database, grant verification, grievance redressal, and AI telemetry).",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
